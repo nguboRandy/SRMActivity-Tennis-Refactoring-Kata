@@ -6,13 +6,24 @@ namespace Tennis
     {
         static void Main(string[] args)
         {
-            var game = new TennisGame1("player1", 
-                "player2");
+            var game = new TennisGame("Player One", "Player Two");
 
-            game.WonPoint("Player1");
+            Console.WriteLine("English Scores:");
+            game.WonPoint("Player One");
             Console.WriteLine(game.GetScore());
 
-            game.WonPoint("Player2");
+            game.WonPoint("Player Two");
+            Console.WriteLine(game.GetScore());
+
+            game.WonPoint("Player One");
+            Console.WriteLine(game.GetScore());
+
+            game.SetLanguage(new FrenchTranslator());
+            Console.WriteLine("\nFrench Scores:");
+            Console.WriteLine(game.GetScore());
+
+            game.SetLanguage(new SpanishTranslator());
+            Console.WriteLine("\nSpanish Scores:");
             Console.WriteLine(game.GetScore());
 
             Console.ReadKey();

@@ -53,55 +53,12 @@ namespace Tennis.Tests
     {
         [Theory]
         [ClassData(typeof(TestDataGenerator))]
-        public void Tennis1Test(int p1, int p2, string expected)
+        public void TennisGameTest(int p1, int p2, string expected)
         {
-            var game = new TennisGame1("player1", "player2");
+            var game = new TennisGame("player1", "player2");
             CheckAllScores(game, p1, p2, expected);
         }
 
-        [Theory]
-        [ClassData(typeof(TestDataGenerator))]
-        public void Tennis2Test(int p1, int p2, string expected)
-        {
-            var game = new TennisGame2("player1", "player2");
-            CheckAllScores(game, p1, p2, expected);
-        }
-
-        [Theory]
-        [ClassData(typeof(TestDataGenerator))]
-        public void Tennis3Test(int p1, int p2, string expected)
-        {
-            var game = new TennisGame3("player1", "player2");
-            CheckAllScores(game, p1, p2, expected);
-        }
-        [Theory]
-        [ClassData(typeof(TestDataGenerator))]
-        public void Tennis4Test(int p1, int p2, string expected)
-        {
-            var game = new TennisGame4("player1", "player2");
-            CheckAllScores(game, p1, p2, expected);
-        }
-        [Theory]
-        [ClassData(typeof(TestDataGenerator))]
-        public void Tennis5Test(int p1, int p2, string expected)
-        {
-            var game = new TennisGame5("player1", "player2");
-            CheckAllScores(game, p1, p2, expected);
-        }
-        [Theory]
-        [ClassData(typeof(TestDataGenerator))]
-        public void Tennis6Test(int p1, int p2, string expected)
-        {
-            var game = new TennisGame6("player1", "player2");
-            CheckAllScores(game, p1, p2, expected);
-        }        
-        [Theory]
-        [ClassData(typeof(TestDataGenerator))]
-        public void Tennis7Test(int p1, int p2, string expected)
-        {
-            var game = new TennisGame7("player1", "player2");
-            CheckAllScores(game, p1, p2, "Current score: " + expected + ", enjoy your game!");
-        }
         private void CheckAllScores(ITennisGame game, int player1Score, int player2Score, string expectedScore)
         {
             var highestScore = Math.Max(player1Score, player2Score);
